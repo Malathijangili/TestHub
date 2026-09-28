@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TasteHub - Experience delicious food made with love. Order online from our fresh menu of starters, pizzas, burgers, biryanis, desserts, and drinks.">
+    <title>TasteHub – Restaurant Menu & Shopping Cart</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. HEADER NAVIGATION
+         ========================================== -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Restaurant Logo -->
+            <a href="#home" class="logo" id="header-logo">
+                <img src="assets/logo.png" alt="TasteHub Logo" class="logo-img">
+                <div class="logo-text">Taste<span>Hub</span></div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Controls -->
+            <div class="header-actions">
+                <!-- Quick Search Input -->
+                <div class="nav-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="nav-search-input" placeholder="Search food..." aria-label="Search dishes">
+                </div>
+
+                <!-- Shopping Cart Icon Button -->
+                <button class="cart-icon-btn" id="cart-btn" aria-label="Open Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+
+                <!-- Mobile Hamburger Button -->
+                <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         2. HERO SECTION
+         ========================================== -->
+    <section class="hero-section" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-fire"></i> #1 Rated Culinary Experience
+                </div>
+                <h1 class="hero-title">Delicious Food, <span>Made With Love</span></h1>
+                <p class="hero-description">
+                    Indulge in artisanal culinary delights prepared with handpicked organic ingredients, passionate recipes, and served fresh straight to your table.
+                </p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary" id="hero-explore-btn">
+                        Explore Menu <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        Our Story
+                    </a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i class="fas fa-shipping-fast"></i> Free Fast Delivery
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf"></i> 100% Fresh Ingredients
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-award"></i> Master Chef Recipes
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Banner -->
+            <div class="hero-image-wrapper">
+                <img src="assets/pizza.jpg" alt="Delicious Gourmet Pizza" class="hero-main-img">
+                <div class="hero-floating-badge">
+                    <div class="badge-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="badge-text">
+                        <strong>4.9 Rating</strong>
+                        <span>From 2,500+ Happy Foodies</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. MENU SECTION
+         ========================================== -->
+    <section class="menu-section section-padding" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Menu</span>
+                <h2 class="section-title">Explore Delicious Dishes</h2>
+                <p class="section-description">Filter by your favorite categories or search for specific dishes crafted to perfection.</p>
+            </div>
+
+            <!-- Menu Controls: Category Tabs & Filters -->
+            <div class="menu-controls">
+                <!-- Category Buttons -->
+                <ul class="category-list">
+                    <li><button class="category-btn active" data-category="All">All</button></li>
+                    <li><button class="category-btn" data-category="Starters">Starters</button></li>
+                    <li><button class="category-btn" data-category="Main Course">Main Course</button></li>
+                    <li><button class="category-btn" data-category="Pizza">Pizza</button></li>
+                    <li><button class="category-btn" data-category="Burgers">Burgers</button></li>
+                    <li><button class="category-btn" data-category="Desserts">Desserts</button></li>
+                    <li><button class="category-btn" data-category="Drinks">Drinks</button></li>
+                </ul>
+
+                <!-- Secondary Filter Bar (Search & Diet Preference) -->
+                <div class="secondary-filter-bar">
+                    <div class="menu-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search dishes by name or ingredient..." aria-label="Search menu items">
+                    </div>
+                    <div class="diet-filter-group">
+                        <button class="diet-btn active" data-diet="all">All</button>
+                        <button class="diet-btn" data-diet="veg">🥬 Veg Only</button>
+                        <button class="diet-btn" data-diet="non-veg">🍖 Non-Veg</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Cards Container Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Dynamically populated via JavaScript renderMenu() -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. SHOPPING CART SIDEBAR & OVERLAY
+         ========================================== -->
+    <!-- Backdrop Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Cart Drawer Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping Cart Sidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+            <button class="close-cart-btn" id="close-cart-btn" aria-label="Close Shopping Cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Scrollable Cart Items -->
+        <div class="cart-items" id="cart-items">
+            <!-- Dynamically populated by JS updateCart() -->
+        </div>
+
+        <!-- Cart Summary & Checkout Button -->
+        <div class="cart-footer">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal-amount">₹0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (5%)</span>
+                <span id="tax-amount">₹0.00</span>
+            </div>
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="total-amount">₹0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn" onclick="checkout()" disabled>
+                Checkout <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ==========================================
+         5. ABOUT SECTION
+         ========================================== -->
+    <section class="about-section section-padding" id="about">
+        <div class="container about-container">
+            <div class="about-img-wrapper">
+                <img src="assets/about.jpg" alt="TasteHub Restaurant Dining Experience" class="about-img">
+                <div class="about-experience-card">
+                    <div class="years">10+</div>
+                    <div class="text">Years of Culinary<br>Excellence</div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <span class="section-subtitle">About TasteHub</span>
+                <h2>Crafting Memorable Dining Experiences Since 2016</h2>
+                <p>
+                    At TasteHub, we believe great food brings people together. We prepare fresh, delicious meals using quality ingredients and serve them with love.
+                </p>
+                <p>
+                    From our hand-tossed artisan pizzas to slow-steeped beverages and succulent starters, every item on our menu is crafted by master chefs dedicated to excellence.
+                </p>
+
+                <!-- Statistics Grid -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Unique Dishes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25k+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         6. CONTACT SECTION
+         ========================================== -->
+    <section class="contact-section section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Contact Us</span>
+                <h2 class="section-title">Get In Touch With TasteHub</h2>
+                <p class="section-description">Have a question, feedback, or special reservation request? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-container">
+                <!-- Info Cards -->
+                <div class="contact-info-card">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-text">
+                            <h4>Restaurant Location</h4>
+                            <p>124 Gourmet Boulevard, Culinary District, Tech City 560001</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-text">
+                            <h4>Phone & Reservations</h4>
+                            <p>+91 98765 43210 / +91 80 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h4>Email Enquiries</h4>
+                            <p>hello@tastehub.com / support@tastehub.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-text">
+                            <h4>Opening Hours</h4>
+                            <p>Monday – Sunday: 11:00 AM – 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h3>Send Us A Message</h3>
+                    <form id="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="contact-name">Your Full Name *</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message *</label>
+                            <textarea id="contact-message" class="form-control" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Submit Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         7. FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <img src="assets/logo.png" alt="TasteHub Logo" class="logo-img">
+                        <div class="logo-text">Taste<span>Hub</span></div>
+                    </a>
+                    <p>Delicious food made with love and delivered fresh to your door. Experience culinary excellence with TasteHub.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Our Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Food Categories -->
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#menu" onclick="filterByCategory('Starters')">Starters</a></li>
+                        <li><a href="#menu" onclick="filterByCategory('Main Course')">Main Course</a></li>
+                        <li><a href="#menu" onclick="filterByCategory('Pizza')">Pizzas</a></li>
+                        <li><a href="#menu" onclick="filterByCategory('Burgers')">Burgers</a></li>
+                        <li><a href="#menu" onclick="filterByCategory('Desserts')">Desserts</a></li>
+                        <li><a href="#menu" onclick="filterByCategory('Drinks')">Drinks</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Tech City, 560001</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> support@tastehub.com</li>
+                        <li><i class="fas fa-clock"></i> 11:00 AM - 11:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 TasteHub. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT FILES
+         ========================================== -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
